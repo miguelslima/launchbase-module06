@@ -29,7 +29,27 @@
     <textarea name="description">{{product.description}}</textarea>
 </div>
 
-{# Campo de Foto #}
+<div class="item">
+  <div>Fotos</div>
+  <div>
+    <div id="photos-upload">
+      
+      <input 
+        id="photos-input"
+        type="file"
+        name="photos"
+        multiple
+        accept="image/*"
+        onChange="PhotosUpload.handleFileInput(event)"
+      >
+    <p>Selecione até 6 fotos</p>
+    </div>
+    
+    <div id="photos-preview">
+      
+    </div>
+    
+</div>
 
   <div class="item">
   <div>Valor</div>
@@ -62,9 +82,9 @@
   </div>
 </div>
 
-{% if product.status %}
+{% if (product.status == '1') or (product.status == 0) %}
 <div class="item">
-  <div>Disponível</div>
+  <div>Disponível?</div>
   <div>
     <span>
       <input 
@@ -79,7 +99,8 @@
       <input 
         type="radio" 
         name="status" 
-        value="0" {% if product.status == '0' %}
+        value="0" 
+        {% if product.status == '0' %}
           checked
         {% endif %}> Não
     </span>

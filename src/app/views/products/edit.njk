@@ -22,12 +22,12 @@
         >
 
         
-        <button class="button" type="submit">Atualizar</button>
+        <button class="button edit" type="submit">Atualizar</button>
     </form>
 
     <form id="form-delete" action="/product?_method=DELETE" method="post">
       <input type="hidden" name="id" value={{product.id}}>
-      <button class="button" type="submit"> Excluir </button>
+      <button class="button delete" type="submit"> Excluir </button>
     </form>
 
     <script>
