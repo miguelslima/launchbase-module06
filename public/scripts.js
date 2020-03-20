@@ -1,16 +1,3 @@
-// const input = document.querySelector('input[name="price"]');
-// input.addEventListener("keydown", function(e) {
-
-//   setTimeout( function() {
-//     let { value } = e.target;
-//     value = value.replace(/\D/g,"");
-//     value = new Intl.NumberFormat('pt-BR', {
-//       style: 'currency',
-//       currency: 'BRL'
-//     }).format(value/100);
-//     e.target.value = value;
-//   }, 1);
-// })
 
 const Mask = {
 
@@ -135,4 +122,20 @@ const PhotosUpload = {
 
     photoDiv.remove()
   }
+}
+
+const ImageGallery = {
+  highlight: document.querySelectorAll('.gallery .highlight > img'),
+  previews: document.querySelectorAll('.gallery-previews img'),
+  setImage(e) {
+    const { target } = e;
+
+    ImageGallery.previews.forEach(preview => preview.classList.remove('active'));
+
+    target.classList.add('active');
+
+    ImageGallery.highlight.src = target.src;
+  }
+
+
 }
