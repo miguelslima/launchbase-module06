@@ -495,3 +495,21 @@ form .item #photos-preview img {
   font-size: 14px;
   letter-spacing: .4px;
 }
+
+/* SHOP */
+
+.shop h2 {
+  margin: 48px;
+}
+
+.shop .items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 32px;
+}
+
+.shopt .product {
+  display: grid;
+  
+}

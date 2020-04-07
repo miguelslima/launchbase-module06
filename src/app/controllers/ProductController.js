@@ -5,6 +5,12 @@ const Product = require('../models/Product')
 const File = require('../models/File')
 
 module.exports = {
+    all() {
+        return db.query(`
+            SELECT * FROM products
+            ORDER BY updated_at DESC
+        `)
+    },
     create(req, res) {
         // Pegar Categorias
         Category.all()
